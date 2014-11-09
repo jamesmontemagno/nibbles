@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nibbles.Shared/Nodes/Bubble.cs">
+    <Files>
+      <File FileName="Nibbles.Shared/Nodes/Bubble.cs" Line="87" Column="87" />
+      <File FileName="Nibbles.Shared/Helpers/Utils.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/Layers/GameStartLayer.cs" Line="69" Column="69" />
+      <File FileName="Nibbles.iOS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/GameAppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Android/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/Layers/GameOverLayer.cs" Line="1" Column="1" />
+      <File FileName="../KylesGames/KylesGames/GameLayer.cs" Line="4" Column="4" />
+      <File FileName="Nibbles.Shared/Layers/GameMainLayer.cs" Line="13" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

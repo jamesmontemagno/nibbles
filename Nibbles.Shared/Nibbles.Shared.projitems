@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{B31884CE-5C29-4F02-B69D-66E5BEE60838}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Nibbles.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GameAppDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Nodes\Bubble.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\GameStartLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\GameMainLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layers\GameOverLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Layers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Nodes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+  </ItemGroup>
+</Project>

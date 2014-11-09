@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Nibbles.Shared", "Nibbles.Shared\Nibbles.Shared.shproj", "{B31884CE-5C29-4F02-B69D-66E5BEE60838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nibbles.iOS", "Nibbles.iOS\Nibbles.iOS.csproj", "{2979466B-48DA-4BC0-A678-CB92D5F18361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nibbles.Android", "Nibbles.Android\Nibbles.Android.csproj", "{8ECA8323-1324-4DE2-88BB-86637D376F29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Debug|iPhone.Build.0 = Debug|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Release|iPhone.ActiveCfg = Release|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Release|iPhone.Build.0 = Release|iPhone
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{2979466B-48DA-4BC0-A678-CB92D5F18361}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Release|iPhone.Build.0 = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Nibbles.iOS\Nibbles.iOS.csproj
+	EndGlobalSection
+EndGlobal
