@@ -20,7 +20,7 @@ namespace Nibbles.Shared.Layers
 
 			AddEventListener (touchListener, this);
 
-			scoreMessage = String.Format ("Game Over.\nYou're score: {0}", score);
+			scoreMessage = String.Format ("Game Over.\nYour score: {0}", score);
 
 			if (score > Settings.HighScore) {
 				scoreMessage += "\nNew High Score!";
