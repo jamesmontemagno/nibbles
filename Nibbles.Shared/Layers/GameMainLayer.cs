@@ -135,7 +135,7 @@ namespace Nibbles.Shared.Layers
 			hitBubble.Freeze ();
 			try{
 
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("Sounds/ring0", false);
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("ring0", false);
 
 			}
 			catch{
@@ -193,7 +193,7 @@ namespace Nibbles.Shared.Layers
 				bubble.Freeze ();
 				try{
 
-					CCSimpleAudioEngine.SharedEngine.PlayEffect("Sounds/ring" + frozenBubbles.Count.ToString(), false);
+					CCSimpleAudioEngine.SharedEngine.PlayEffect("ring" + frozenBubbles.Count.ToString(), false);
 				}
 				catch{
 				}
@@ -206,7 +206,7 @@ namespace Nibbles.Shared.Layers
 
 			if (frozenBubbles.Count >= 6) {
 				TallyScore ();
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("Sounds/highscore");
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("highscore");
 
 			}
 		}

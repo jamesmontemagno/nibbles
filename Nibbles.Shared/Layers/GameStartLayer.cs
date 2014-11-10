@@ -32,15 +32,15 @@ namespace Nibbles.Shared.Layers
 
 			repeatedAction = new CCRepeatForever (moveSeq);
 
-			CCSimpleAudioEngine.SharedEngine.PlayBackgroundMusic ("sounds/backgroundMusic", true);
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/pop");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring0");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring1");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring2");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring3");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring4");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring5");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/highscore");
+			CCSimpleAudioEngine.SharedEngine.PlayBackgroundMusic ("backgroundMusic", true);
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("pop");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring0");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring1");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring2");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring3");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring4");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring5");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("highscore");
 			CCSimpleAudioEngine.SharedEngine.BackgroundMusicVolume = .8f;
 			CCSimpleAudioEngine.SharedEngine.EffectsVolume = 1.0f;
 		}
