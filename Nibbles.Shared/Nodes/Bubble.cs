@@ -106,7 +106,7 @@ namespace Nibbles.Shared.Nodes
 			pop.EmissionRate = 80;
 			pop.StartColor = new CCColor4F(color);
 			layer.AddChild (pop);
-			CCSimpleAudioEngine.SharedEngine.PlayEffect ("Sounds/pop");
+			CCSimpleAudioEngine.SharedEngine.PlayEffect ("pop");
 		}
 
 		public void ForcePop(CCLayer layer){
