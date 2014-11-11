@@ -194,7 +194,7 @@ namespace Nibbles.Shared.Layers
 
 			if (frozenBubbles.Count >= 6) {
 				TallyScore ();
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("sounds/highscore");
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("highscore");
 
 			}
 		}

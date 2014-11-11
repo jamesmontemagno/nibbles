@@ -94,7 +94,7 @@ namespace Nibbles.Shared.Nodes
 			this.StopAllActions ();
 			try{
 
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("sounds/ring" + count, false);
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("ring" + count, false);
 
 			}
 			catch{
@@ -113,7 +113,7 @@ namespace Nibbles.Shared.Nodes
 			pop.EmissionRate = 80;
 			pop.StartColor = new CCColor4F(color);
 			layer.AddChild (pop);
-			CCSimpleAudioEngine.SharedEngine.PlayEffect ("sounds/pop");
+			CCSimpleAudioEngine.SharedEngine.PlayEffect ("pop");
 		}
 
 		public void ForcePop(CCLayer layer){
