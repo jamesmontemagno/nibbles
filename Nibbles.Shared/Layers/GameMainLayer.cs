@@ -22,7 +22,7 @@ namespace Nibbles.Shared.Layers
 		Bubble hitBubble;
 		CCLabel scoreLabel, multiplierLabel, countdown;
 		int baseFont = 48;
-		float currentScore;
+		Int64 currentScore;
 
 		const float GAME_DURATION = 63.5f; // game ends after 60 seconds
 
@@ -132,14 +132,8 @@ namespace Nibbles.Shared.Layers
 			if (hitBubble == null)
 				return;
 
-			hitBubble.Freeze ();
-			try{
-
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("Sounds/ring0", false);
-
-			}
-			catch{
-			}
+			hitBubble.Freeze (0);
+		
 			frozenBubbles.Add (hitBubble);
 
 			lastPoint = touch.Location;
@@ -190,13 +184,7 @@ namespace Nibbles.Shared.Layers
 
 			foreach (var bubble in bubbles) {
 				frozenBubbles.Add (bubble);
-				bubble.Freeze ();
-				try{
-
-					CCSimpleAudioEngine.SharedEngine.PlayEffect("Sounds/ring" + frozenBubbles.Count.ToString(), false);
-				}
-				catch{
-				}
+				bubble.Freeze (frozenBubbles.Count);
 			}
 
 			if (frozenBubbles.Count > 1) {
@@ -206,7 +194,7 @@ namespace Nibbles.Shared.Layers
 
 			if (frozenBubbles.Count >= 6) {
 				TallyScore ();
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("Sounds/highscore");
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("sounds/highscore");
 
 			}
 		}
@@ -301,7 +289,7 @@ namespace Nibbles.Shared.Layers
 		}
 			
 
-		private void UpdateScore(float toAdd){
+		private void UpdateScore(Int64 toAdd){
 
 			currentScore += toAdd;
 			scoreLabel.Text = currentScore.ToString ();

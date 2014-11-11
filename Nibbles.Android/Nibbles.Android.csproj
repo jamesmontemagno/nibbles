@@ -109,11 +109,11 @@
     <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\backgroundMusic.mp3">
       <Link>Assets\Content\sounds\backgroundMusic.mp3</Link>
     </AndroidAsset>
+    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\highscore.wav">
+      <Link>Assets\Content\sounds\highscore.wav</Link>
+    </AndroidAsset>
     <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\pop.wav">
       <Link>Assets\Content\sounds\pop.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\highscore.mp3">
-      <Link>Assets\Content\sounds\highscore.mp3</Link>
     </AndroidAsset>
     <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring0.wav">
       <Link>Assets\Content\sounds\ring0.wav</Link>

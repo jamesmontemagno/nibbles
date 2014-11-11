@@ -162,6 +162,6 @@
     <BundleResource Include="Content\sounds\ring4.wav" />
     <BundleResource Include="Content\sounds\ring5.wav" />
     <BundleResource Include="Content\sounds\ring0.wav" />
-    <BundleResource Include="Content\sounds\highscore.mp3" />
+    <BundleResource Include="Content\sounds\highscore.wav" />
   </ItemGroup>
 </Project>

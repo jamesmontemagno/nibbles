@@ -22,21 +22,21 @@ namespace Nibbles.Shared.Helpers
 		#region Setting Constants
 
 		private const string HighScoreKey = "high_score_key";
-		private static readonly double HighScoreDefault = 0;
+		private static readonly Int64 HighScoreDefault = 0;
 
 		#endregion
 
 
-		public static double HighScore
+		public static Int64 HighScore
 		{
 			get
 			{
-				return AppSettings.GetValueOrDefault(HighScoreKey, HighScoreDefault);
+				return AppSettings.GetValueOrDefault(HighScoreKey, (Int64)HighScoreDefault);
 			}
 			set
 			{
 				//if value has changed then save it!
-				if (AppSettings.AddOrUpdateValue(HighScoreKey, value))
+				if (AppSettings.AddOrUpdateValue(HighScoreKey, (Int64)value))
 					AppSettings.Save();
 			}
 		}

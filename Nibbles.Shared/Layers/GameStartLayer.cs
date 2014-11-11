@@ -41,8 +41,8 @@ namespace Nibbles.Shared.Layers
 			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring4");
 			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/ring5");
 			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("sounds/highscore");
-			CCSimpleAudioEngine.SharedEngine.BackgroundMusicVolume = .8f;
-			CCSimpleAudioEngine.SharedEngine.EffectsVolume = 1.0f;
+			CCSimpleAudioEngine.SharedEngine.BackgroundMusicVolume = .6f;
+			CCSimpleAudioEngine.SharedEngine.EffectsVolume = .6f;
 		}
 
 		protected override void AddedToScene ()

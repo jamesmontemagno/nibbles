@@ -12,7 +12,7 @@ namespace Nibbles.Shared.Layers
 		string scoreMessage = string.Empty;
 		bool highScore;
 
-		public GameOverLayer (float score)
+		public GameOverLayer (Int64 score)
 		{
 
 			var touchListener = new CCEventListenerTouchAllAtOnce ();
@@ -89,7 +89,7 @@ namespace Nibbles.Shared.Layers
 
 		}
 
-		public static CCScene CreateScene (CCWindow mainWindow, float score)
+		public static CCScene CreateScene (CCWindow mainWindow, Int64 score)
 		{
 			var scene = new CCScene (mainWindow);
 			var layer = new GameOverLayer (score);

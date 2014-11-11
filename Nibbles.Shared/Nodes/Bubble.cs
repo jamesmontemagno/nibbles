@@ -83,15 +83,22 @@ namespace Nibbles.Shared.Nodes
 			scale = new CCScaleBy (growthTime, bubbleMax);
 			this.AddAction (scale);
 
-			move1 = new CCMoveBy (.25f, new CCPoint (3, 3));
-			move2 = new CCMoveBy (.25f, new CCPoint (-3, -3));
+			move1 = new CCMoveBy (.2f, new CCPoint (4, 4));
+			move2 = new CCMoveBy (.24f, new CCPoint (-4, -4));
 			repeatedAction = new CCRepeatForever (move1, move2);
 		}
 
 
-		public void Freeze(){
+		public void Freeze(int count){
 			IsFrozen = true;
 			this.StopAllActions ();
+			try{
+
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("sounds/ring" + count, false);
+
+			}
+			catch{
+			}
 		
 		}
 
@@ -106,7 +113,7 @@ namespace Nibbles.Shared.Nodes
 			pop.EmissionRate = 80;
 			pop.StartColor = new CCColor4F(color);
 			layer.AddChild (pop);
-			CCSimpleAudioEngine.SharedEngine.PlayEffect ("Sounds/pop");
+			CCSimpleAudioEngine.SharedEngine.PlayEffect ("sounds/pop");
 		}
 
 		public void ForcePop(CCLayer layer){
@@ -117,7 +124,7 @@ namespace Nibbles.Shared.Nodes
 
 		public bool Pop(CCLayer layer){
 
-			if (this.NumberOfRunningActions == 1 && this.ScaleX + this.ScaleY > bubbleMax - 1.0) {
+			if (this.NumberOfRunningActions == 1 && this.ScaleX + this.ScaleY > bubbleMax - 1.25) {
 				RunAction (repeatedAction);
 			}
 
