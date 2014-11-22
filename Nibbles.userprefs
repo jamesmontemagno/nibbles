@@ -1,15 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="Android.AndroidL" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nibbles.Shared/Nodes/Bubble.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nibbles.Shared/Layers/GameOverLayer.cs">
     <Files>
-      <File FileName="Nibbles.Shared/Nodes/Bubble.cs" Line="54" Column="54" />
+      <File FileName="Nibbles.Shared/Nodes/Bubble.cs" Line="14" Column="14" />
       <File FileName="Nibbles.Shared/Helpers/Utils.cs" Line="1" Column="1" />
       <File FileName="Nibbles.Shared/Layers/GameStartLayer.cs" Line="1" Column="1" />
       <File FileName="Nibbles.iOS/AppDelegate.cs" Line="1" Column="1" />
       <File FileName="Nibbles.Shared/GameAppDelegate.cs" Line="1" Column="1" />
       <File FileName="Nibbles.Android/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="Nibbles.Shared/Layers/GameOverLayer.cs" Line="1" Column="1" />
       <File FileName="Nibbles.Shared/Layers/GameMainLayer.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/Helpers/Settings.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/Layers/GameOverLayer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

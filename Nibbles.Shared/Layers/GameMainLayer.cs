@@ -24,7 +24,7 @@ namespace Nibbles.Shared.Layers
 		int baseFont = 48;
 		Int64 currentScore;
 
-		const float GAME_DURATION = 63.5f; // game ends after 60 seconds
+		const float GAME_DURATION = 63.5f; // game ends after 63.5 seconds
 
 		public GameMainLayer () : base (CCColor4B.Blue, CCColor4B.AliceBlue)
 		{
@@ -38,7 +38,6 @@ namespace Nibbles.Shared.Layers
 			line = new CCDrawNode ();
 			line.ZOrder = int.MaxValue;
 			StartScheduling ();	
-
 		}
 
 		protected override void AddedToScene ()
@@ -65,7 +64,6 @@ namespace Nibbles.Shared.Layers
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Top,
 				AnchorPoint = CCPoint.AnchorMiddle,
-
 			};
 
 			multiplierLabel = new CCLabel(string.Empty, "Roboto-Light", 48) {

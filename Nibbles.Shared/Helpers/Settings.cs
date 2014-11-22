@@ -23,21 +23,32 @@ namespace Nibbles.Shared.Helpers
 
 		private const string HighScoreKey = "high_score_key";
 		private static readonly Int64 HighScoreDefault = 0;
+		private const string FirstTimeKey = "first_time_key";
+		private static readonly bool FirstTimeDefault = true;
 
 		#endregion
 
+		public static bool FirstTime
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(FirstTimeKey, FirstTimeDefault);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue (FirstTimeKey, value);
+			}
+		}
 
 		public static Int64 HighScore
 		{
 			get
 			{
-				return AppSettings.GetValueOrDefault(HighScoreKey, (Int64)HighScoreDefault);
+				return AppSettings.GetValueOrDefault (HighScoreKey, HighScoreDefault);
 			}
 			set
 			{
-				//if value has changed then save it!
-				if (AppSettings.AddOrUpdateValue(HighScoreKey, (Int64)value))
-					AppSettings.Save();
+				AppSettings.AddOrUpdateValue (HighScoreKey, (Int64)value);
 			}
 		}
 
