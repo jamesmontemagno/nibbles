@@ -48,9 +48,9 @@ namespace Nibbles.Shared.Layers
 			base.AddedToScene ();
 
 			Scene.SceneResolutionPolicy = CCSceneResolutionPolicy.ShowAll;
-
+			CCRect bounds = VisibleBoundsWorldspace;
 			var scoreLabel = new CCLabel (scoreMessage, "Roboto-Light", 48) {
-				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X + 190, VisibleBoundsWorldspace.Size.Center.Y + 125),
+				Position = new CCPoint (bounds.Size.Width / 2, bounds.Size.Height / 2 + 150),
 				Color = CCColor3B.Black,
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
@@ -61,8 +61,8 @@ namespace Nibbles.Shared.Layers
 
 			Scene.SceneResolutionPolicy = CCSceneResolutionPolicy.ShowAll;
 
-			var scoreLabel2 = new CCLabel (scoreMessage, "Roboto-Light", 56) {
-				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X + 150, VisibleBoundsWorldspace.Size.Center.Y + 125),
+			var scoreLabel2 = new CCLabel (scoreMessage, "Roboto-Light", 64) {
+				Position = new CCPoint (bounds.Size.Width / 2, bounds.Size.Height / 2 + 50),
 				Color = new CCColor3B (52, 152, 219),
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
@@ -73,7 +73,7 @@ namespace Nibbles.Shared.Layers
 			AddChild (scoreLabel2);
 
 			var playAgainLabel = new CCLabel ("Tap to Return", "Roboto-Light", 36) {
-				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X + 110, 60),
+				Position = new CCPoint (bounds.Size.Width / 2, 60),
 				Color = CCColor3B.Black,
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
@@ -84,12 +84,12 @@ namespace Nibbles.Shared.Layers
 
 
 			CCRect visibleBounds = VisibleBoundsWorldspace;
-			CCPoint centerBounds = visibleBounds.Center;
+
 
 			logo = new CCSprite ("title");
 			// Layout the positioning of sprites based on visibleBounds
 			logo.AnchorPoint = CCPoint.AnchorMiddle;
-			logo.Position = new CCPoint (centerBounds.X, centerBounds.Y - 175);
+			logo.Position = new CCPoint (bounds.Size.Width / 2.0F, bounds.Size.Height / 4.0F);
 
 			// Run actions on sprite
 			// Note: we can reuse the same action definition on multiple sprites!

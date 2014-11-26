@@ -39,131 +39,112 @@ namespace Nibbles.Shared.Layers
 			CCSimpleAudioEngine.SharedEngine.EffectsVolume = .6f;
 		}
 
+		void StartGame (object stuff = null)
+		{
+			var mainGame = Settings.FirstTime ? GameTutorialLayer.CreateScene (Window, true) : GameMainLayer.CreateScene (Window);
+			Settings.FirstTime = false;
+			var transitionToGameOver = new CCTransitionMoveInR (0.3f, mainGame);
+			Director.ReplaceScene (transitionToGameOver);
+		}
+
+		void StartTutorial (object stuff = null)
+		{
+			var layer = GameTutorialLayer.CreateScene (Window);
+			var transition = new CCTransitionMoveInR (0.3f, layer);
+			Director.ReplaceScene (transition);
+		}
+
+		void StartHighScores (object stuff = null)
+		{
+			var layer = GameScoresLayer.CreateScene (Window);
+			var transition = new CCTransitionMoveInR (0.3f, layer);
+			Director.ReplaceScene (transition);
+		}
+
+		static void StartDevelopedBy (object stuff = null)
+		{
+			const string url = "http://www.twitter.com/JamesMontemagno";
+			#if __ANDROID__
+			try {
+				var intent = new Android.Content.Intent (Android.Content.Intent.ActionView);
+				intent.SetData (Android.Net.Uri.Parse (url));
+				Android.App.Application.Context.StartActivity (intent);
+			}
+			catch (Exception ex) {
+			}
+			#elif __IOS__
+								try {
+						MonoTouch.UIKit.UIApplication.SharedApplication.OpenUrl (new MonoTouch.Foundation.NSUrl (url));
+					}
+					catch (Exception ex) {
+					}
+				#endif
+		}
+
 		protected override void AddedToScene ()
 		{
 			base.AddedToScene ();
 
 			var textColor = new CCColor3B (52, 152, 219);
 
-			var startListener = new CCEventListenerTouchAllAtOnce ();
-			var tutorialListener = new CCEventListenerTouchAllAtOnce ();
-			var highScoreListener = new CCEventListenerTouchAllAtOnce ();
-			var createdByListener = new CCEventListenerTouchAllAtOnce ();
-
-			startListener.OnTouchesEnded = (touches, ccevent) => {
-
-				if(ccevent.CurrentTarget != menuStart)
-					return;
-					
-				var mainGame = Settings.FirstTime ? 
-					GameTutorialLayer.CreateScene(Window, true) : 
-					GameMainLayer.CreateScene (Window);
-
-				Settings.FirstTime = false;
-
-				var transitionToGameOver = new CCTransitionMoveInR (0.3f, mainGame);
-
-				Director.ReplaceScene (transitionToGameOver);
-			};
-
-			tutorialListener.OnTouchesEnded = (touches, ccevent) => {
-
-				if(ccevent.CurrentTarget != menuTutorial)
-					return;
-
-				var layer = GameTutorialLayer.CreateScene (Window);
-				var transition = new CCTransitionMoveInR (0.3f, layer);
-
-				Director.ReplaceScene (transition);
-			};
-
-			highScoreListener.OnTouchesEnded = (touches, ccevent) => {
-			
-				if(ccevent.CurrentTarget != menuHighScore)
-					return;
-
-				var layer = GameScoresLayer.CreateScene (Window);
-				var transition = new CCTransitionMoveInR (0.3f, layer);
-
-				Director.ReplaceScene (transition);
-			};
-
-			createdByListener.OnTouchesEnded = (touches, ccevent) => {
-
-				//do stuff here in the future
-				if(ccevent.CurrentTarget != developedBy)
-					return;
-
-				const string url = "http://mobile.twitter.com/jamesmontemagno";
-				#if __ANDROID__
-
-				try {
-
-					var intent = new Android.Content.Intent (Android.Content.Intent.ActionView);
-					intent.SetData (Android.Net.Uri.Parse (url));
-					Android.App.Application.Context.StartActivity (intent);
-
-				}
-				catch (Exception ex) {
-				}
-
-				#elif __IOS__
-					try {
-						MonoTouch.UIKit.UIApplication.SharedApplication.OpenUrl (new MonoTouch.Foundation.NSUrl (url));
-					}
-					catch (Exception ex) {
-					}
-				#endif
-
-			};
-
+		
 			CCRect bounds = VisibleBoundsWorldspace;
 
 			developedBy = new CCLabel ("Created by @JamesMontemagno", "Roboto-Light", 36) {
-				Position = new CCPoint (bounds.Size.Width / 2, 60),
+				/*Position = new CCPoint (bounds.Size.Width / 2, 60),*/
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
 				AnchorPoint = CCPoint.AnchorMiddle
 			};
 
-			AddChild (developedBy);
-			AddEventListener (startListener, developedBy);
-
-
 			menuStart = new CCLabel("START GAME", "Roboto-Light", 48) {
-				Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2 + 100),
+				/*Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2 + 100),*/
 				Color = textColor,
-				HorizontalAlignment = CCTextAlignment.Center,
+				HorizontalAlignment = CCTextAlignment.Right,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
 				AnchorPoint = CCPoint.AnchorMiddleRight
 			};
 
-			AddChild (menuStart);
-			AddEventListener (startListener, menuStart);
 
 			menuTutorial = new CCLabel("TUTORIAL", "Roboto-Light", 48) {
-				Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2),
+				/*Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2),*/
 				Color = textColor,
-				HorizontalAlignment = CCTextAlignment.Center,
+				HorizontalAlignment = CCTextAlignment.Right,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
 				AnchorPoint = CCPoint.AnchorMiddleRight
 			};
 
-			AddChild (menuTutorial);
-
-			AddEventListener (tutorialListener, menuTutorial);
 
 			menuHighScore = new CCLabel("SCORES", "Roboto-Light", 48) {
-				Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2 - 100),
+				/*Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2 - 100),*/
 				Color = textColor,
-				HorizontalAlignment = CCTextAlignment.Center,
+				HorizontalAlignment = CCTextAlignment.Right,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
+
 				AnchorPoint = CCPoint.AnchorMiddleRight
 			};
 
-			AddChild (menuHighScore);
-			AddEventListener (highScoreListener, menuHighScore);
+			var menuItemStart = new CCMenuItemLabel (menuStart, StartGame);
+			var menuItemTutorial = new CCMenuItemLabel (menuTutorial, StartTutorial);
+			var menuItemScores = new CCMenuItemLabel (menuHighScore, StartHighScores);
+			var menuItemCreatedBy = new CCMenuItemLabel (developedBy, StartDevelopedBy);
+
+			var menu = new CCMenu (menuItemStart, menuItemTutorial, menuItemScores) {
+				Position = new CCPoint (bounds.Size.Width/1.5F, bounds.Size.Height / 2),
+				AnchorPoint = CCPoint.AnchorMiddleRight
+			};
+			menu.AlignItemsVertically (50);
+
+
+			AddChild (menu);
+
+			var menu2 = new CCMenu (menuItemCreatedBy) {
+				Position = new CCPoint (bounds.Size.Width / 2, 60),
+				AnchorPoint = CCPoint.AnchorMiddle
+			};
+
+			AddChild (menu2);
 
 			logo = new CCSprite ("title");
 

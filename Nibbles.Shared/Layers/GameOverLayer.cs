@@ -53,7 +53,7 @@ namespace Nibbles.Shared.Layers
 			Scene.SceneResolutionPolicy = CCSceneResolutionPolicy.ShowAll;
 
 			var scoreLabel = new CCLabel (scoreMessage, "Roboto-Light", 48) {
-				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X + 150, VisibleBoundsWorldspace.Size.Center.Y + 125),
+				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X, VisibleBoundsWorldspace.Size.Center.Y + 150),
 				Color = new CCColor3B (52, 152, 219),
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
@@ -63,7 +63,7 @@ namespace Nibbles.Shared.Layers
 			AddChild (scoreLabel);
 
 			var playAgainLabel = new CCLabel ("Tap to Play Again", "Roboto-Light", 36) {
-				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X + 110, 60),
+				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X, 60),
 				Color = new CCColor3B (52, 152, 219),
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
@@ -79,7 +79,7 @@ namespace Nibbles.Shared.Layers
 			logo = new CCSprite ("title");
 			// Layout the positioning of sprites based on visibleBounds
 			logo.AnchorPoint = CCPoint.AnchorMiddle;
-			logo.Position = new CCPoint (centerBounds.X, centerBounds.Y - 175);
+			logo.Position = new CCPoint (centerBounds.X, centerBounds.Y - 100);
 
 			// Run actions on sprite
 			// Note: we can reuse the same action definition on multiple sprites!

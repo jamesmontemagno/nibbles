@@ -21,7 +21,7 @@ namespace Nibbles.Shared.Layers
 		int redColorIncrementEnd = 20;
 		Bubble hitBubble;
 		CCLabel scoreLabel, multiplierLabel, countdown;
-		int baseFont = 48;
+		const int baseFont = 48;
 		Int64 currentScore;
 
 		const float GAME_DURATION = 63.5f; // game ends after 63.5 seconds
