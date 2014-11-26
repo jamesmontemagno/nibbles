@@ -9,7 +9,7 @@ namespace Nibbles.Shared.Layers
 	{
 		CCSprite logo;
 		CCRepeatForever repeatedAction;
-		CCLabel menuStart, menuTutorial, menuHighScore; 
+		CCLabel menuStart, menuTutorial, menuHighScore, developedBy; 
 
 		public GameStartLayer () : base (CCColor4B.White)
 		{
@@ -48,14 +48,13 @@ namespace Nibbles.Shared.Layers
 			var startListener = new CCEventListenerTouchAllAtOnce ();
 			var tutorialListener = new CCEventListenerTouchAllAtOnce ();
 			var highScoreListener = new CCEventListenerTouchAllAtOnce ();
+			var createdByListener = new CCEventListenerTouchAllAtOnce ();
 
 			startListener.OnTouchesEnded = (touches, ccevent) => {
 
 				if(ccevent.CurrentTarget != menuStart)
 					return;
-
-
-
+					
 				var mainGame = Settings.FirstTime ? 
 					GameTutorialLayer.CreateScene(Window, true) : 
 					GameMainLayer.CreateScene (Window);
@@ -79,16 +78,48 @@ namespace Nibbles.Shared.Layers
 			};
 
 			highScoreListener.OnTouchesEnded = (touches, ccevent) => {
-
-				//do stuff here in the future
+			
 				if(ccevent.CurrentTarget != menuHighScore)
 					return;
+
+				var layer = GameScoresLayer.CreateScene (Window);
+				var transition = new CCTransitionMoveInR (0.3f, layer);
+
+				Director.ReplaceScene (transition);
+			};
+
+			createdByListener.OnTouchesEnded = (touches, ccevent) => {
+
+				//do stuff here in the future
+				if(ccevent.CurrentTarget != developedBy)
+					return;
+
+				const string url = "http://mobile.twitter.com/jamesmontemagno";
+				#if __ANDROID__
+
+				try {
+
+					var intent = new Android.Content.Intent (Android.Content.Intent.ActionView);
+					intent.SetData (Android.Net.Uri.Parse (url));
+					Android.App.Application.Context.StartActivity (intent);
+
+				}
+				catch (Exception ex) {
+				}
+
+				#elif __IOS__
+					try {
+						MonoTouch.UIKit.UIApplication.SharedApplication.OpenUrl (new MonoTouch.Foundation.NSUrl (url));
+					}
+					catch (Exception ex) {
+					}
+				#endif
 
 			};
 
 			CCRect bounds = VisibleBoundsWorldspace;
 
-			var createdBy = new CCLabel ("Created by @JamesMontemagno", "Roboto-Light", 36) {
+			developedBy = new CCLabel ("Created by @JamesMontemagno", "Roboto-Light", 36) {
 				Position = new CCPoint (bounds.Size.Width / 2, 60),
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -96,8 +127,8 @@ namespace Nibbles.Shared.Layers
 				AnchorPoint = CCPoint.AnchorMiddle
 			};
 
-			AddChild (createdBy);
-			//TODO: add event here to launch twitter perhaps?
+			AddChild (developedBy);
+			AddEventListener (startListener, developedBy);
 
 
 			menuStart = new CCLabel("START GAME", "Roboto-Light", 48) {
