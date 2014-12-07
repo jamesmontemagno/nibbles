@@ -1,55 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4443" systemVersion="13A451" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--Launch Screen View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController id="5" sceneMemberID="viewController" customClass="LaunchScreenViewController">
+                <viewController id="5" customClass="LaunchScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2"/>
                         <viewControllerLayoutGuide type="bottom" id="3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.49803921568627452" green="0.78431372549019607" blue="0.803921568627451" alpha="1"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="9" translatesAutoresizingMaskIntoConstraints="NO" image="splash.png">
-                                <rect key="frame" x="98" y="44" width="371" height="253"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                                <rect key="frame" x="165" y="191" width="271" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="218" id="WtN-oK-Pe6"/>
+                                    <constraint firstAttribute="width" constant="271" id="sDD-PI-g9o"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="326" y="224" width="371" height="319"/>
+                                </variation>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" red="0.49803921568627452" green="0.78431372549019607" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="9" firstAttribute="top" secondItem="2" secondAttribute="bottom" constant="24" id="76"/>
-                            <constraint firstItem="3" firstAttribute="top" secondItem="9" secondAttribute="bottom" constant="23" id="77"/>
-                            <constraint firstItem="9" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="98" id="78"/>
-                            <constraint firstItem="6" firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="99" id="79"/>
+                            <constraint firstAttribute="centerX" secondItem="9" secondAttribute="centerX" id="Kat-Uk-45V"/>
+                            <constraint firstAttribute="centerY" secondItem="9" secondAttribute="centerY" id="vIT-C7-XJC"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="89"/>
+            <point key="canvasLocation" x="146" y="165"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <resources>
-        <image name="Icon-60.png" width="120" height="120"/>
-        <image name="Icon-Small-40.png" width="40" height="40"/>
-        <image name="Default.png" width="320" height="480"/>
-        <image name="Default-568h.png" width="640" height="1136"/>
-        <image name="Content/images/title.png" width="1214" height="595"/>
-        <image name="Content/hd/title.png" width="2428" height="1190"/>
-        <image name="Icon-76.png" width="76" height="76"/>
-        <image name="Default-Landscape.png" width="1024" height="748"/>
-        <image name="Default-Portrait.png" width="768" height="1004"/>
-        <image name="Icon-Small.png" width="29" height="29"/>
-        <image name="main_icon.png" width="512" height="512"/>
         <image name="splash.png" width="371" height="298"/>
     </resources>
 </document>

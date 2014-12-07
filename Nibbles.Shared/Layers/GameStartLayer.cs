@@ -149,8 +149,8 @@ namespace Nibbles.Shared.Layers
 			logo = new CCSprite ("title");
 
 			// Layout the positioning of sprites based on visibleBounds
-			logo.AnchorPoint = CCPoint.AnchorMiddleLeft;
-			logo.Position = new CCPoint (30, bounds.Size.Height / 2);
+			logo.AnchorPoint = CCPoint.AnchorMiddle;
+			logo.Position = new CCPoint (bounds.Size.Width / 4, bounds.Size.Height / 2);
 
 			// Run actions on sprite
 			// Note: we can reuse the same action definition on multiple sprites!
