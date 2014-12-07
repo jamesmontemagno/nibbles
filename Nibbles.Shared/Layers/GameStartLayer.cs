@@ -11,9 +11,9 @@ namespace Nibbles.Shared.Layers
 		CCRepeatForever repeatedAction;
 		CCLabel menuStart, menuTutorial, menuHighScore, developedBy; 
 
-		public GameStartLayer () : base (CCColor4B.White)
+		public GameStartLayer () : base (new CCColor4B(127,200,205))
 		{
-			Color = CCColor3B.White;
+			Color = new CCColor3B(127, 200, 205);
 			Opacity = 255;
 
 			// Define actions
@@ -85,7 +85,7 @@ namespace Nibbles.Shared.Layers
 		{
 			base.AddedToScene ();
 
-			var textColor = new CCColor3B (52, 152, 219);
+			var textColor = CCColor3B.White;
 
 		
 			CCRect bounds = VisibleBoundsWorldspace;
@@ -150,7 +150,7 @@ namespace Nibbles.Shared.Layers
 
 			// Layout the positioning of sprites based on visibleBounds
 			logo.AnchorPoint = CCPoint.AnchorMiddleLeft;
-			logo.Position = new CCPoint (120, bounds.Size.Height / 2);
+			logo.Position = new CCPoint (30, bounds.Size.Height / 2);
 
 			// Run actions on sprite
 			// Note: we can reuse the same action definition on multiple sprites!

@@ -16,7 +16,13 @@ namespace Nibbles.Shared.Layers
 		{
 
 			var touchListener = new CCEventListenerTouchAllAtOnce ();
-			touchListener.OnTouchesBegan = (touches, ccevent) => Window.DefaultDirector.ReplaceScene (GameMainLayer.CreateScene(Window));
+			touchListener.OnTouchesBegan = (touches, ccevent) => {
+
+				if(touches[0].Location.X < VisibleBoundsWorldspace.Size.Center.X)
+					Window.DefaultDirector.ReplaceScene (GameStartLayer.CreateScene (Window));
+				else
+					Window.DefaultDirector.ReplaceScene (GameMainLayer.CreateScene (Window));
+			};
 
 			AddEventListener (touchListener, this);
 
@@ -30,7 +36,7 @@ namespace Nibbles.Shared.Layers
 				scoreMessage += "\nCurrent High Score : " + Settings.HighScore;
 			}
 
-			Color = CCColor3B.White;
+			Color = new CCColor3B(127, 200, 205);
 
 			Opacity = 255;
 
@@ -51,10 +57,10 @@ namespace Nibbles.Shared.Layers
 			base.AddedToScene ();
 
 			Scene.SceneResolutionPolicy = CCSceneResolutionPolicy.ShowAll;
-
+			var textColor = CCColor3B.White;
 			var scoreLabel = new CCLabel (scoreMessage, "Roboto-Light", 48) {
 				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X, VisibleBoundsWorldspace.Size.Center.Y + 150),
-				Color = new CCColor3B (52, 152, 219),
+				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
 				AnchorPoint = CCPoint.AnchorMiddle
@@ -62,15 +68,25 @@ namespace Nibbles.Shared.Layers
 
 			AddChild (scoreLabel);
 
-			var playAgainLabel = new CCLabel ("Tap to Play Again", "Roboto-Light", 36) {
-				Position = new CCPoint (VisibleBoundsWorldspace.Size.Center.X, 60),
-				Color = new CCColor3B (52, 152, 219),
-				HorizontalAlignment = CCTextAlignment.Center,
+			var playAgainLabel = new CCLabel ("Play Again", "Roboto-Light", 36) {
+				Position = new CCPoint (VisibleBoundsWorldspace.Size.Width - 120, 60),
+				Color = textColor,
+				HorizontalAlignment = CCTextAlignment.Left,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
 				AnchorPoint = CCPoint.AnchorMiddle,
 			};
 
 			AddChild (playAgainLabel);
+
+			var mainmenu = new CCLabel ("Main Menu", "Roboto-Light", 36) {
+				Position = new CCPoint (120, 60),
+				Color = textColor,
+				HorizontalAlignment = CCTextAlignment.Right,
+				VerticalAlignment = CCVerticalTextAlignment.Center,
+				AnchorPoint = CCPoint.AnchorMiddle,
+			};
+
+			AddChild (mainmenu);
 
 
 			CCRect visibleBounds = VisibleBoundsWorldspace;

@@ -43,7 +43,7 @@ namespace Nibbles.Shared.Layers
 			};
 
 			AddEventListener (touchListener, this);
-			Color = CCColor3B.White;
+			Color = new CCColor3B(127, 200, 205);
 			Opacity = 255;
 		}
 
@@ -51,7 +51,7 @@ namespace Nibbles.Shared.Layers
 		{
 			base.AddedToScene ();
 
-			var textColor = new CCColor3B (52, 152, 219);
+			var textColor = CCColor3B.White;
 			CCRect bounds = VisibleBoundsWorldspace;
 
 			title = new CCLabel(string.Empty, "Roboto-Light", 36) {

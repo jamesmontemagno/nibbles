@@ -1,11 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="Android.Lollipop" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nibbles.Shared/Layers/GameStartLayer.cs">
-    <Files>
-      <File FileName="Nibbles.Shared/GameAppDelegate.cs" Line="1" Column="1" />
-      <File FileName="Nibbles.Shared/Layers/GameStartLayer.cs" Line="5" Column="5" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

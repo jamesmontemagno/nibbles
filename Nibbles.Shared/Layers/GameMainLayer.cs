@@ -26,15 +26,15 @@ namespace Nibbles.Shared.Layers
 
 		const float GAME_DURATION = 63.5f; // game ends after 63.5 seconds
 
-		public GameMainLayer () : base (CCColor4B.Blue, CCColor4B.AliceBlue)
+		public GameMainLayer () : base (CCColor4B.Blue, new CCColor4B(127, 200, 205))
 		{
 			// Load and instantate your assets here
 			visibleBubbles = new List<Bubble> ();
 			burstedBubbles = new List<Bubble> ();
 			frozenBubbles = new List<Bubble> ();
 			// Make any renderable node objects (e.g. sprites) children of this layer
-			Color = CCColor3B.Gray;
-			Opacity = 120;
+			Color = new CCColor3B(127, 200, 205);
+			Opacity = 200;
 			line = new CCDrawNode ();
 			line.ZOrder = int.MaxValue;
 			StartScheduling ();	
@@ -230,7 +230,7 @@ namespace Nibbles.Shared.Layers
 					visibleBubbles.Add (AddBubble ());
 
 				var left = (GAME_DURATION - elapsedTime);
-				if (left < 10)
+				if (left < 10 && CCRandom.Next(0, 100) > 30)
 					visibleBubbles.Add (AddBubble ());
 			}, .5f);
 

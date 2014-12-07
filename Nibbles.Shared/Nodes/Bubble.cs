@@ -18,6 +18,12 @@ namespace Nibbles.Shared.Nodes
 		CCMoveBy move1, move2;
 		CCRepeatForever repeatedAction;
 
+		static CCColor4B color0 = new CCColor4B (119, 208, 101, 255);
+		static CCColor4B color1 = new CCColor4B (180, 85, 182, 255);
+		static CCColor4B color2 = new CCColor4B (255, 255, 255, 255);//white
+		static CCColor4B color3 = new CCColor4B (44, 62, 80, 255);
+		static CCColor4B color4 = new CCColor4B (255, 255, 75, 255);//yellow
+
 		public int Points
 		{
 			get { return (int)(bubblePoints * this.ScaleX); }
@@ -50,19 +56,19 @@ namespace Nibbles.Shared.Nodes
 			Scale = 0.5f;
 			switch (random.Next (0, 5)) {
 			case 0:
-				color = new CCColor4B (119, 208, 101, 255);
+				color = color0;
 				break;
 			case 1:
-				color = new CCColor4B (180, 85, 182, 255);
+				color = color1;
 				break;
 			case 2:
-				color = new CCColor4B (52, 152, 219, 255);
+				color = color2;
 				break;
 			case 3:
-				color = new CCColor4B (44, 62, 80, 255);
+				color = color3;
 				break;
 			case 4:
-				color = new CCColor4B (115, 129, 130, 255);
+				color = color4;
 				break;
 			}
 

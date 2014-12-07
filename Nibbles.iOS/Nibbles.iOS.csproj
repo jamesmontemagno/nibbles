@@ -158,19 +158,10 @@
     <BundleResource Include="Content\fonts\Roboto-Light.ttf" />
     <BundleResource Include="Resources\Icon-60%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Content\images\title.png" />
-    <BundleResource Include="Content\hd\title%402x.png" />
     <BundleResource Include="Content\sounds\pop.wav" />
     <BundleResource Include="Resources\Icon-Small-40.png" />
     <BundleResource Include="Resources\Icon-76.png" />
     <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Default-Landscape.png" />
-    <BundleResource Include="Resources\Default-Landscape%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
     <BundleResource Include="Content\sounds\backgroundMusic.mp3" />
     <BundleResource Include="Content\sounds\ring1.wav" />
     <BundleResource Include="Content\sounds\ring2.wav" />
@@ -179,6 +170,13 @@
     <BundleResource Include="Content\sounds\ring5.wav" />
     <BundleResource Include="Content\sounds\ring0.wav" />
     <BundleResource Include="Content\sounds\highscore.wav" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\splash%402x.png" />
+    <BundleResource Include="Resources\splash%403x.png" />
+    <BundleResource Include="Content\images\title.png" />
+    <BundleResource Include="Content\hd\title%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
