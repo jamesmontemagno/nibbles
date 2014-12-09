@@ -192,7 +192,7 @@ namespace Nibbles.Shared.Layers
 
 			if (frozenBubbles.Count >= 6) {
 				TallyScore ();
-				CCSimpleAudioEngine.SharedEngine.PlayEffect("highscore");
+				CCSimpleAudioEngine.SharedEngine.PlayEffect("sounds/highscore");
 
 			}
 		}
@@ -207,6 +207,11 @@ namespace Nibbles.Shared.Layers
 			}
 
 			score *= multiplier;
+
+			if (multiplier < 0)
+				score = 0;
+			else if (multiplier == 0)//  1 bubble
+				score = 20;
 		
 			line.Clear ();
 			hitBubble = null;

@@ -24,6 +24,11 @@ namespace Nibbles.iOS
 			CCApplication application = new CCApplication ();
 			application.ApplicationDelegate = new GameAppDelegate ();
 
+			#if !DEBUG
+			//Xamarin.Insights.Initialize ("");
+			//Xamarin.Insights.ForceDataTransmission = true;
+			#endif
+
 			application.StartGame ();
 		}
 

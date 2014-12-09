@@ -25,18 +25,6 @@ namespace Nibbles.Shared.Layers
 																					 new CCEaseBackInOut (moveDown));
 
 			repeatedAction = new CCRepeatForever (moveSeq);
-
-			CCSimpleAudioEngine.SharedEngine.PlayBackgroundMusic ("backgroundMusic", true);
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("pop");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring0");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring1");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring2");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring3");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring4");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring5");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("highscore");
-			CCSimpleAudioEngine.SharedEngine.BackgroundMusicVolume = .6f;
-			CCSimpleAudioEngine.SharedEngine.EffectsVolume = .6f;
 		}
 
 		void StartGame (object stuff = null)
@@ -141,7 +129,8 @@ namespace Nibbles.Shared.Layers
 
 			var menu2 = new CCMenu (menuItemCreatedBy) {
 				Position = new CCPoint (bounds.Size.Width / 2, 60),
-				AnchorPoint = CCPoint.AnchorMiddle
+				AnchorPoint = CCPoint.AnchorMiddle,
+				Color = CCColor3B.White
 			};
 
 			AddChild (menu2);

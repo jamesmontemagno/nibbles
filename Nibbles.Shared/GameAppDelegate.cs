@@ -22,7 +22,17 @@ namespace Nibbles.Shared
 			mainWindow.SetDesignResolutionSize(windowSize.Width, windowSize.Height, CCSceneResolutionPolicy.ExactFit);
 
 			var scene = GameStartLayer.CreateScene (mainWindow);
-
+			CCSimpleAudioEngine.SharedEngine.PlayBackgroundMusic ("sounds/backgroundMusic", true);
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("pop");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring0");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring1");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring2");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring3");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring4");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring5");
+			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("highscore");
+			CCSimpleAudioEngine.SharedEngine.BackgroundMusicVolume = .6f;
+			CCSimpleAudioEngine.SharedEngine.EffectsVolume = .5f;
 			mainWindow.RunWithScene (scene);
 		}
 
