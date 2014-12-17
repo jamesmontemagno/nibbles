@@ -78,7 +78,7 @@ namespace Nibbles.Shared.Layers
 		
 			CCRect bounds = VisibleBoundsWorldspace;
 
-			developedBy = new CCLabel ("Created by @JamesMontemagno", "Roboto-Light", 36) {
+			developedBy = new CCLabel ("Created by @JamesMontemagno", "fonts/Roboto-Light.ttf", 36) {
 				/*Position = new CCPoint (bounds.Size.Width / 2, 60),*/
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -86,7 +86,7 @@ namespace Nibbles.Shared.Layers
 				AnchorPoint = CCPoint.AnchorMiddle
 			};
 
-			menuStart = new CCLabel("START GAME", "Roboto-Light", 48) {
+			menuStart = new CCLabel("START GAME", "fonts/Roboto-Light.ttf", 48) {
 				/*Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2 + 100),*/
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Right,
@@ -95,7 +95,7 @@ namespace Nibbles.Shared.Layers
 			};
 
 
-			menuTutorial = new CCLabel("TUTORIAL", "Roboto-Light", 48) {
+			menuTutorial = new CCLabel("TUTORIAL", "fonts/Roboto-Light.ttf", 48) {
 				/*Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2),*/
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Right,
@@ -104,7 +104,7 @@ namespace Nibbles.Shared.Layers
 			};
 
 
-			menuHighScore = new CCLabel("SCORES", "Roboto-Light", 48) {
+			menuHighScore = new CCLabel("SCORES", "fonts/Roboto-Light.ttf", 48) {
 				/*Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height / 2 - 100),*/
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Right,
