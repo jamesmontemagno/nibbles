@@ -58,7 +58,7 @@ namespace Nibbles.Shared.Layers
 			AddEventListener (touchListener, this);
 
 			//setup
-			scoreLabel = new CCLabel("0", "Roboto-Light", 48) {
+			scoreLabel = new CCLabel("0", "fonts/Roboto-Light.ttf", 48) {
 				Position = new CCPoint(bounds.Size.Width / 2, bounds.Size.Height - 60),
 				Color = CCColor3B.White,
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -66,7 +66,7 @@ namespace Nibbles.Shared.Layers
 				AnchorPoint = CCPoint.AnchorMiddle,
 			};
 
-			multiplierLabel = new CCLabel(string.Empty, "Roboto-Light", 48) {
+			multiplierLabel = new CCLabel(string.Empty, "fonts/Roboto-Light.ttf", 48) {
 				Position = new CCPoint(bounds.Size.Width - 60, 60),
 				Color = CCColor3B.White,
 				HorizontalAlignment = CCTextAlignment.Right,
@@ -74,10 +74,10 @@ namespace Nibbles.Shared.Layers
 				AnchorPoint = CCPoint.AnchorMiddle
 			};
 
-			countdown = new CCLabel("60", "Roboto-Light", 36) {
+			countdown = new CCLabel("60", "fonts/Roboto-Light.ttf", 36) {
 				Position = new CCPoint(120, 60),
 				Color = CCColor3B.White,
-				HorizontalAlignment = CCTextAlignment.Right,
+                HorizontalAlignment = CCTextAlignment.Left,
 				VerticalAlignment = CCVerticalTextAlignment.Center,
 				AnchorPoint = CCPoint.AnchorMiddle
 			};
