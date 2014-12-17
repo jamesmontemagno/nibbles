@@ -131,8 +131,8 @@
     <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring5.wav">
       <Link>Assets\Content\sounds\ring5.wav</Link>
     </AndroidAsset>
-    <AndroidAsset Include="Assets\Content\images\title.png" />
     <AndroidAsset Include="Assets\Content\hd\title%402x.png" />
+    <AndroidAsset Include="Assets\Content\images\title.xnb" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />
