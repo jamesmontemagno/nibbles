@@ -1,6 +1,6 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using CocosSharp;
 using Nibbles.Shared;
 
@@ -25,8 +25,8 @@ namespace Nibbles.iOS
 			application.ApplicationDelegate = new GameAppDelegate ();
 
 			#if !DEBUG
-			//Xamarin.Insights.Initialize ("");
-			//Xamarin.Insights.ForceDataTransmission = true;
+			Xamarin.Insights.Initialize ("24e57f0b30120942dd4c385da58011842fe77c59");
+			Xamarin.Insights.ForceDataTransmission = true;
 			#endif
 
 			application.StartGame ();

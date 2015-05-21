@@ -186,7 +186,7 @@ namespace Nibbles.Shared.Layers
 			}
 
 			if (frozenBubbles.Count > 1) {
-				multiplierLabel.FontSize = baseFont + (frozenBubbles.Count * 2);
+				multiplierLabel.SystemFontSize = baseFont + (frozenBubbles.Count * 2);
 				multiplierLabel.Text = (frozenBubbles.Count - 1) + "x";
 			}
 

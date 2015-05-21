@@ -10,7 +10,6 @@ namespace Nibbles.Shared.Layers
 		CCSprite logo;
 		CCRepeatForever repeatedAction;
 		string scoreMessage = string.Empty;
-		bool highScore;
 
 		public GameScoresLayer ()
 		{
@@ -82,8 +81,17 @@ namespace Nibbles.Shared.Layers
 
 			AddChild (playAgainLabel);
 
+			var shareLabel = new CCLabel ("Share Score", "Roboto-Light", 36) {
+				Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height - 60),
+				Color = CCColor3B.White,
+				HorizontalAlignment = CCTextAlignment.Center,
+				VerticalAlignment = CCVerticalTextAlignment.Center,
+				AnchorPoint = CCPoint.AnchorMiddle,
+			};
 
-			CCRect visibleBounds = VisibleBoundsWorldspace;
+			AddChild (shareLabel);
+
+		
 
 
 			logo = new CCSprite ("title");

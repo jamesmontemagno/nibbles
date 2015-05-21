@@ -7,6 +7,8 @@ namespace Nibbles.Shared.Layers
 {
 	public class GameStartLayer : CCLayerColor
 	{
+
+
 		CCSprite logo;
 		CCRepeatForever repeatedAction;
 		CCLabel menuStart, menuTutorial, menuHighScore, developedBy; 
@@ -56,13 +58,13 @@ namespace Nibbles.Shared.Layers
 			try {
 				var intent = new Android.Content.Intent (Android.Content.Intent.ActionView);
 				intent.SetData (Android.Net.Uri.Parse (url));
-				Android.App.Application.Context.StartActivity (intent);
+				GameAppDelegate.CurrentActivity.StartActivity (intent);
 			}
 			catch (Exception ex) {
 			}
 			#elif __IOS__
 								try {
-						MonoTouch.UIKit.UIApplication.SharedApplication.OpenUrl (new MonoTouch.Foundation.NSUrl (url));
+						UIKit.UIApplication.SharedApplication.OpenUrl (new Foundation.NSUrl (url));
 					}
 					catch (Exception ex) {
 					}

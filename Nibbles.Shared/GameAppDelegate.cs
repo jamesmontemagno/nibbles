@@ -8,6 +8,10 @@ namespace Nibbles.Shared
 {
 	public class GameAppDelegate : CCApplicationDelegate
 	{
+		#if __ANDROID__
+		public static Android.App.Activity CurrentActivity { get; set; }
+		#endif
+
 		public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
 		{
 			application.PreferMultiSampling = false;

@@ -1,17 +1,21 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.James Montemagno’s iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Nibbles.Shared/Layers/GameStartLayer.cs">
-    <Files>
-      <File FileName="Nibbles.Shared/Layers/GameMainLayer.cs" Line="1" Column="1" />
-      <File FileName="Nibbles.Shared/Layers/GameOverLayer.cs" Line="1" Column="1" />
-      <File FileName="Nibbles.Shared/Layers/GameScoresLayer.cs" Line="1" Column="1" />
-      <File FileName="Nibbles.Shared/Layers/GameStartLayer.cs" Line="3" Column="3" />
-      <File FileName="Nibbles.Shared/Layers/GameTutorialLayer.cs" Line="1" Column="1" />
-      <File FileName="Nibbles.Shared/Nodes/Bubble.cs" Line="1" Column="1" />
-    </Files>
+﻿<Properties StartupItem="Nibbles.Android/Nibbles.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="Android.Lollipop" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Nibbles" expanded="True">
+            <Node name="Nibbles.Android" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/nibbles/Nibbles.Shared/Layers/GameStartLayer.cs" line="59" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/nibbles/Nibbles.Shared/Layers/GameStartLayer.cs" line="64" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

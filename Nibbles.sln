@@ -43,6 +43,6 @@ Global
 		{8ECA8323-1324-4DE2-88BB-86637D376F29}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Nibbles.iOS\Nibbles.iOS.csproj
+		StartupItem = Nibbles.Android\Nibbles.Android.csproj
 	EndGlobalSection
 EndGlobal
