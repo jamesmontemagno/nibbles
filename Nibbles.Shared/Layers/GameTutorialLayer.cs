@@ -54,7 +54,7 @@ namespace Nibbles.Shared.Layers
 			var textColor = CCColor3B.White;
 			CCRect bounds = VisibleBoundsWorldspace;
 
-			title = new CCLabel(string.Empty, "fonts/Roboto-Light.ttf", 36) {
+			title = new CCLabel(string.Empty, GameAppDelegate.MainFont, 36, CCLabelFormat.SystemFont) {
 				Position = new CCPoint(bounds.Size.Width / 2, bounds.Size.Height - 60),
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -64,7 +64,7 @@ namespace Nibbles.Shared.Layers
 
 			AddChild (title);
 
-			next = new CCLabel ("NEXT", "fonts/Roboto-Light.ttf", 36) {
+			next = new CCLabel ("NEXT", GameAppDelegate.MainFont, 36, CCLabelFormat.SystemFont) {
 				Color = textColor,
 				Position = new CCPoint(bounds.Size.Width - 60, 60),
 				HorizontalAlignment = CCTextAlignment.Right,
@@ -74,7 +74,7 @@ namespace Nibbles.Shared.Layers
 
 			AddChild (next);
 
-			message = new CCLabel(string.Empty, "fonts/Roboto-Light.ttf", 48) {
+			message = new CCLabel(string.Empty, GameAppDelegate.MainFont, 48, CCLabelFormat.SystemFont) {
 				Position = new CCPoint (bounds.Size.Width / 2, bounds.Size.Height / 2),
 				Color = textColor,
 				HorizontalAlignment = CCTextAlignment.Center,

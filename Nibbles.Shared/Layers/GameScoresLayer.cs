@@ -48,7 +48,7 @@ namespace Nibbles.Shared.Layers
 
 			Scene.SceneResolutionPolicy = CCSceneResolutionPolicy.ShowAll;
 			CCRect bounds = VisibleBoundsWorldspace;
-			var scoreLabel = new CCLabel (scoreMessage, "fonts/Roboto-Light.ttf", 48) {
+			var scoreLabel = new CCLabel (scoreMessage, GameAppDelegate.MainFont, 48, CCLabelFormat.SystemFont) {
 				Position = new CCPoint (bounds.Size.Width / 2, bounds.Size.Height / 2 + 200),
 				Color = CCColor3B.White,
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -60,7 +60,7 @@ namespace Nibbles.Shared.Layers
 
 			Scene.SceneResolutionPolicy = CCSceneResolutionPolicy.ShowAll;
 
-			var scoreLabel2 = new CCLabel (scoreMessage, "fonts/Roboto-Light.ttf", 64) {
+			var scoreLabel2 = new CCLabel (scoreMessage, GameAppDelegate.MainFont, 64, CCLabelFormat.SystemFont) {
 				Position = new CCPoint (bounds.Size.Width / 2, bounds.Size.Height / 2 + 100),
 				Color = new CCColor3B (52, 152, 219),
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -71,7 +71,7 @@ namespace Nibbles.Shared.Layers
 
 			AddChild (scoreLabel2);
 
-			var playAgainLabel = new CCLabel ("Tap to Return", "fonts/Roboto-Light.ttf", 36) {
+			var playAgainLabel = new CCLabel ("Tap to Return", GameAppDelegate.MainFont, 36, CCLabelFormat.SystemFont) {
 				Position = new CCPoint (bounds.Size.Width / 2, 60),
 				Color = CCColor3B.White,
 				HorizontalAlignment = CCTextAlignment.Center,
@@ -81,8 +81,8 @@ namespace Nibbles.Shared.Layers
 
 			AddChild (playAgainLabel);
 
-			var shareLabel = new CCLabel ("Share Score", "Roboto-Light", 36) {
-				Position = new CCPoint (bounds.Size.Width - 60, bounds.Size.Height - 60),
+			var shareLabel = new CCLabel ("Share Score", GameAppDelegate.MainFont, 36, CCLabelFormat.SystemFont) {
+				Position = new CCPoint (bounds.Size.Width - 120, bounds.Size.Height - 60),
 				Color = CCColor3B.White,
 				HorizontalAlignment = CCTextAlignment.Center,
 				VerticalAlignment = CCVerticalTextAlignment.Center,

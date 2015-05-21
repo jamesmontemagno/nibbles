@@ -147,7 +147,7 @@
       <Link>Assets\Content\sounds\ring5.wav</Link>
     </AndroidAsset>
     <AndroidAsset Include="Assets\Content\hd\title%402x.png" />
-    <AndroidAsset Include="Assets\Content\images\title.xnb" />
+    <AndroidAsset Include="Assets\Content\images\title.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />
