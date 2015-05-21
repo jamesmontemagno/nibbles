@@ -8,7 +8,7 @@ namespace Nibbles.Shared
 {
 	public class GameAppDelegate : CCApplicationDelegate
 	{
-		public const string MainFont = "fonts/Roboto-Light.tff";
+		public const string MainFont = "fonts/Roboto-Light.ttf";
 		#if __ANDROID__
 		public static Android.App.Activity CurrentActivity { get; set; }
 		#endif
