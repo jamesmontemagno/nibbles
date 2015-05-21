@@ -8,7 +8,7 @@ namespace Nibbles.Shared
 {
 	public class GameAppDelegate : CCApplicationDelegate
 	{
-		public const string MainFont = "fonts/Roboto-Light.ttf";
+		public const string MainFont = "Roboto-Light.ttf";
 		#if __ANDROID__
 		public static Android.App.Activity CurrentActivity { get; set; }
 		#endif
@@ -24,7 +24,8 @@ namespace Nibbles.Shared
 			application.ContentSearchPaths.Add ("hd");
 
 			var windowSize = mainWindow.WindowSizeInPixels;
-			mainWindow.SetDesignResolutionSize(windowSize.Width, windowSize.Height, CCSceneResolutionPolicy.ExactFit);
+
+			CCScene.SetDefaultDesignResolution(windowSize.Width, windowSize.Height, CCSceneResolutionPolicy.ExactFit);
 
 			var scene = GameStartLayer.CreateScene (mainWindow);
 			CCSimpleAudioEngine.SharedEngine.PlayBackgroundMusic ("sounds/backgroundMusic", true);

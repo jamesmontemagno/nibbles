@@ -101,8 +101,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Content\animations\" />
-    <Folder Include="Assets\Content\fonts\" />
     <Folder Include="Assets\Content\images\" />
     <Folder Include="Assets\Content\sounds\" />
     <Folder Include="Resources\drawable\" />
@@ -112,42 +110,25 @@
     <Folder Include="Resources\drawable-mdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="Assets\Content\hd\" />
+    <Folder Include="Assets\Content\animations\" />
+    <Folder Include="Assets\Content\fonts\" />
   </ItemGroup>
   <Import Project="..\Nibbles.Shared\Nibbles.Shared.projitems" Label="Shared" Condition="Exists('..\Nibbles.Shared\Nibbles.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\fonts\Roboto-Light.ttf">
-      <Link>Assets\Content\fonts\Roboto-Light.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\backgroundMusic.mp3">
-      <Link>Assets\Content\sounds\backgroundMusic.mp3</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\highscore.wav">
-      <Link>Assets\Content\sounds\highscore.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\pop.wav">
-      <Link>Assets\Content\sounds\pop.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring0.wav">
-      <Link>Assets\Content\sounds\ring0.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring1.wav">
-      <Link>Assets\Content\sounds\ring1.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring2.wav">
-      <Link>Assets\Content\sounds\ring2.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring3.wav">
-      <Link>Assets\Content\sounds\ring3.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring4.wav">
-      <Link>Assets\Content\sounds\ring4.wav</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Nibbles.iOS\Content\sounds\ring5.wav">
-      <Link>Assets\Content\sounds\ring5.wav</Link>
-    </AndroidAsset>
     <AndroidAsset Include="Assets\Content\hd\title%402x.png" />
     <AndroidAsset Include="Assets\Content\images\title.png" />
+    <AndroidAsset Include="Assets\Content\fonts\Roboto-Light.ttf" />
+    <AndroidAsset Include="Assets\Content\sounds\ring5.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\ring4.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\ring3.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\ring2.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\ring1.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\ring0.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\highscore.wav" />
+    <AndroidAsset Include="Assets\Content\sounds\backgroundMusic.mp3" />
+    <AndroidAsset Include="Assets\Content\sounds\highscore.mp3" />
+    <AndroidAsset Include="Assets\Content\sounds\pop.wav" />
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="environment.txt" />
