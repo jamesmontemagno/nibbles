@@ -87,18 +87,10 @@ namespace Nibbles.Shared.Layers
 			AddChild (countdown, 1);
 
 			//add initial bubbles
-			ScheduleOnce (t => {
-				visibleBubbles.Add (AddBubble ());
-			}, .25f);
-			ScheduleOnce (t => {
-				visibleBubbles.Add (AddBubble ());
-			}, .25f);
-			ScheduleOnce (t => {
-				visibleBubbles.Add (AddBubble ());
-			}, .25f);
-			ScheduleOnce (t => {
-				visibleBubbles.Add (AddBubble ());
-			}, .25f);
+			ScheduleOnce (t => visibleBubbles.Add (AddBubble ()), .25f);
+			ScheduleOnce (t => visibleBubbles.Add (AddBubble ()), .25f);
+			ScheduleOnce (t => visibleBubbles.Add (AddBubble ()), .25f);
+			ScheduleOnce (t => visibleBubbles.Add (AddBubble ()), .25f);
 		}
 
 		void OnTouchesEnded (List<CCTouch> touches, CCEvent touchEvent)

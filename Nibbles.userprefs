@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Nibbles.iOS/Nibbles.iOS.csproj">
+﻿<Properties StartupItem="Nibbles.Android/Nibbles.Android.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="Android.Lollipop" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
