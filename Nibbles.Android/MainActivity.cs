@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework;
 
 using CocosSharp;
 using Nibbles.Shared;
+using System.Collections.Generic;
+using System;
 
 namespace NibblesAndroid
 {
@@ -17,24 +19,44 @@ namespace NibblesAndroid
 		LaunchMode = LaunchMode.SingleInstance,
 		MainLauncher = true,
 		ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden)]
-	public class MainActivity : AndroidGameActivity
+    public class MainActivity : Activity
 	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
-			#if !DEBUG
-			Xamarin.Insights.Initialize ("24e57f0b30120942dd4c385da58011842fe77c59");
-			Xamarin.Insights.ForceDataTransmission = true;
-			#endif
 
-		
+        CCGameView gameView;
+        GameAppDelegate game;
+		protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
 
-			var application = new CCApplication ();
-			application.ApplicationDelegate = new GameAppDelegate ();
-			GameAppDelegate.CurrentActivity = this;
-			SetContentView (application.AndroidContentView);
-			application.StartGame ();
-		}
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
+            game = new GameAppDelegate();
+
+            // Get our game view from the layout resource,
+            // and attach the view created event to it
+            gameView = (CCGameView)FindViewById(Resource.Id.GameView);
+            gameView.ViewCreated += LoadGame;
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            game?.ApplicationDidEnterBackground();
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            game?.ApplicationWillEnterForeground();
+        }
+        void LoadGame(object sender, EventArgs e)
+        {
+            if (gameView == null)
+                return;
+
+            game.Load(gameView);
+        }
+
 	}
 }
 

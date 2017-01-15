@@ -12,25 +12,18 @@ namespace Nibbles.iOS
 	[Register ("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate
 	{
-		//
-		// This method is invoked when the application has loaded and is ready to run. In this
-		// method you should instantiate the window, load the UI into it and then make the window
-		// visible.
-		//
-		// You have 17 seconds to return from this method, or iOS will terminate your application.
-		//
-		public override void FinishedLaunching (UIApplication app)
-		{
-			CCApplication application = new CCApplication ();
-			application.ApplicationDelegate = new GameAppDelegate ();
+		public override UIWindow Window
+        {
+            get;
+            set;
+        }
 
-			#if !DEBUG
-			Xamarin.Insights.Initialize ("24e57f0b30120942dd4c385da58011842fe77c59");
-			Xamarin.Insights.ForceDataTransmission = true;
-			#endif
-
-			application.StartGame ();
-		}
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+        {
+            // Override point for customization after application launch.
+            // If not required for your application you can safely delete this method
+            return true;
+        }
 
 		static void Main (string[] args)
 		{

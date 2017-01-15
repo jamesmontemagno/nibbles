@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Launch Screen View Controller-->
         <scene sceneID="4">
             <objects>
-                <viewController id="5" customClass="LaunchScreenViewController" sceneMemberID="viewController">
+                <viewController id="5" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2"/>
                         <viewControllerLayoutGuide type="bottom" id="3"/>
@@ -22,12 +23,9 @@
                                     <constraint firstAttribute="height" constant="218" id="WtN-oK-Pe6"/>
                                     <constraint firstAttribute="width" constant="271" id="sDD-PI-g9o"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="326" y="224" width="371" height="319"/>
-                                </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.49803921568627452" green="0.78431372549019607" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.49803921568627452" green="0.78431372549019607" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="9" secondAttribute="centerX" id="Kat-Uk-45V"/>
                             <constraint firstAttribute="centerY" secondItem="9" secondAttribute="centerY" id="vIT-C7-XJC"/>
@@ -41,5 +39,11 @@
     </scenes>
     <resources>
         <image name="splash.png" width="371" height="298"/>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="Content/images/title.png" width="425" height="208"/>
+        <image name="Content/hd/title.png" width="425" height="208.5"/>
     </resources>
 </document>

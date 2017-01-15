@@ -22,12 +22,12 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchLink>None</MtouchLink>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchI18n>
     </MtouchI18n>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
+<DeviceSpecificBuild>false</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -111,38 +111,33 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Refractored.Xam.Settings">
-      <HintPath>..\packages\Xam.Plugins.Settings.1.5.1\lib\Xamarin.iOS10\Refractored.Xam.Settings.dll</HintPath>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Refractored.Xam.Settings.Abstractions">
-      <HintPath>..\packages\Xam.Plugins.Settings.1.5.1\lib\Xamarin.iOS10\Refractored.Xam.Settings.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Insights">
-      <HintPath>..\packages\Xamarin.Insights.1.10.2.110\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
-    </Reference>
-    <Reference Include="PLCrashReporterUnifiedBinding">
-      <HintPath>..\packages\Xamarin.Insights.1.10.2.110\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
-    </Reference>
-    <Reference Include="CocosSharp">
-      <HintPath>..\packages\CocosSharp.iOS.1.4.0.0\lib\Xamarin.iOS10\CocosSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\packages\CocosSharp.iOS.1.4.0.0\lib\Xamarin.iOS10\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Lidgren.Network">
-      <HintPath>..\packages\CocosSharp.iOS.1.4.0.0\lib\Xamarin.iOS10\Lidgren.Network.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoGame.Framework.Net">
-      <HintPath>..\packages\CocosSharp.iOS.1.4.0.0\lib\Xamarin.iOS10\MonoGame.Framework.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoGame.Framework">
-      <HintPath>..\packages\CocosSharp.iOS.1.4.0.0\lib\Xamarin.iOS10\MonoGame.Framework.dll</HintPath>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
     <Reference Include="box2d">
-      <HintPath>..\packages\CocosSharp.iOS.1.4.0.0\lib\Xamarin.iOS10\box2d.dll</HintPath>
+      <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\box2d.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Plus">
-      <HintPath>..\Components\googleplusandplayios-1.7.1.5\lib\ios-unified\Google.Plus.dll</HintPath>
+    <Reference Include="CocosSharp">
+      <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\CocosSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net">
+      <HintPath>..\packages\CocosSharp.1.7.1.0\lib\Xamarin.iOS10\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\packages\Plugin.Share.5.0.0\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\packages\Plugin.Share.5.0.0\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -157,13 +152,13 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="Properties\_SettingsStarted.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="LaunchScreenViewController.cs" />
-    <Compile Include="LaunchScreenViewController.designer.cs">
-      <DependentUpon>LaunchScreenViewController.cs</DependentUpon>
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="GameViewController.cs" />
+    <Compile Include="GameViewController.designer.cs">
+      <DependentUpon>GameViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="..\Nibbles.Shared\Nibbles.Shared.projitems" Label="Shared" Condition="Exists('..\Nibbles.Shared\Nibbles.Shared.projitems')" />
@@ -194,11 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="googleplusandplayios">
-      <Version>1.7.1.5</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
 </Project>

@@ -1,57 +1,71 @@
 ﻿using System;
+using System.Collections.Generic;
 using CocosSharp;
 using Nibbles.Shared.Layers;
-using CocosDenshion;
 
 
 namespace Nibbles.Shared
 {
-	public class GameAppDelegate : CCApplicationDelegate
+	public class GameAppDelegate
 	{
 		public const string MainFont = "Roboto-Light.ttf";
-		#if __ANDROID__
-		public static Android.App.Activity CurrentActivity { get; set; }
-		#endif
+        public static CCGameView GameView { get; set; }
 
-		public override void ApplicationDidFinishLaunching (CCApplication application, CCWindow mainWindow)
+        public void Load (CCGameView gameView)
 		{
-			application.PreferMultiSampling = false;
-			application.ContentRootDirectory = "Content";
-			application.ContentSearchPaths.Add ("animations");
-			application.ContentSearchPaths.Add ("fonts");
-			application.ContentSearchPaths.Add ("images");
-			application.ContentSearchPaths.Add ("sounds");
-			application.ContentSearchPaths.Add ("hd");
+            GameView = gameView;
+            GameView.ResolutionPolicy = CCViewResolutionPolicy.ShowAll;
+			CCAudioEngine.SharedEngine.PlayBackgroundMusic ("sounds/backgroundMusic", true);
+			CCAudioEngine.SharedEngine.PreloadEffect ("pop");
+			CCAudioEngine.SharedEngine.PreloadEffect ("ring0");
+			CCAudioEngine.SharedEngine.PreloadEffect ("ring1");
+			CCAudioEngine.SharedEngine.PreloadEffect ("ring2");
+			CCAudioEngine.SharedEngine.PreloadEffect ("ring3");
+			CCAudioEngine.SharedEngine.PreloadEffect ("ring4");
+			CCAudioEngine.SharedEngine.PreloadEffect ("ring5");
+			CCAudioEngine.SharedEngine.PreloadEffect ("highscore");
+			CCAudioEngine.SharedEngine.BackgroundMusicVolume = .6f;
+			CCAudioEngine.SharedEngine.EffectsVolume = .5f;
 
-			var windowSize = mainWindow.WindowSizeInPixels;
+            var contentSearchPaths = new List<string>() { "Fonts", "Sounds" };
+            CCSizeI viewSize = gameView.ViewSize;
 
-			CCScene.SetDefaultDesignResolution(windowSize.Width, windowSize.Height, CCSceneResolutionPolicy.ExactFit);
+            int width = 1024;
+            int height = 768;
 
-			var scene = GameStartLayer.CreateScene (mainWindow);
-			CCSimpleAudioEngine.SharedEngine.PlayBackgroundMusic ("sounds/backgroundMusic", true);
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("pop");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring0");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring1");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring2");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring3");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring4");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("ring5");
-			CCSimpleAudioEngine.SharedEngine.PreloadEffect ("highscore");
-			CCSimpleAudioEngine.SharedEngine.BackgroundMusicVolume = .6f;
-			CCSimpleAudioEngine.SharedEngine.EffectsVolume = .5f;
-			mainWindow.RunWithScene (scene);
+            // Set world dimensions
+            gameView.DesignResolution = new CCSizeI(width, height);
+
+            // Determine whether to use the high or low def versions of our images
+            // Make sure the default texel to content size ratio is set correctly
+            // Of course you're free to have a finer set of image resolutions e.g (ld, hd, super-hd)
+            if (width < viewSize.Width)
+            {
+                contentSearchPaths.Add("Images/Hd");
+                CCSprite.DefaultTexelToContentSizeRatio = 2.0f;
+            }
+            else
+            {
+                contentSearchPaths.Add("Images/Ld");
+                CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
+            }
+
+            gameView.ContentManager.SearchPaths = contentSearchPaths;
+
+            gameView.RunWithScene(GameStartLayer.CreateScene(gameView));
+
 		}
 
-		public override void ApplicationDidEnterBackground (CCApplication application)
+		public void ApplicationDidEnterBackground ()
 		{
-			application.Paused = true;// if you use SimpleAudioEngine, your music must be paused
-			CCSimpleAudioEngine.SharedEngine.PauseBackgroundMusic ();
+            GameView.Paused = true;
+			CCAudioEngine.SharedEngine.PauseBackgroundMusic ();
 		}
 
-		public override void ApplicationWillEnterForeground (CCApplication application)
+		public void ApplicationWillEnterForeground ()
 		{
-			application.Paused = false;// if you use SimpleAudioEngine, your music must be paused
-			CCSimpleAudioEngine.SharedEngine.ResumeBackgroundMusic ();
+            GameView.Paused = false;
+			CCAudioEngine.SharedEngine.ResumeBackgroundMusic ();
 		}
 	}
 }

@@ -44,5 +44,9 @@
 	<string>LaunchScreen</string>
 	<key>UIStatusBarHidden</key>
 	<true/>
+	<key>CFBundleName</key>
+	<string>Nibbles</string>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
 </dict>
 </plist>

@@ -1,21 +1,27 @@
-﻿<Properties StartupItem="Nibbles.Android/Nibbles.Android.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="Android.Lollipop" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Nibbles" expanded="True">
-            <Node name="Nibbles.Android" expanded="True" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
+﻿<Properties StartupConfiguration="{2979466B-48DA-4BC0-A678-CB92D5F18361}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nibbles.Shared/GameAppDelegate.cs">
+    <Files>
+      <File FileName="Nibbles.iOS/AppDelegate.cs" Line="26" Column="10" />
+      <File FileName="Nibbles.Shared/Layers/GameMainLayer.cs" Line="6" Column="19" />
+      <File FileName="Nibbles.Shared/Layers/GameOverLayer.cs" Line="34" Column="37" />
+      <File FileName="Nibbles.Shared/Layers/GameScoresLayer.cs" Line="68" Column="32" />
+      <File FileName="Nibbles.Shared/Layers/GameStartLayer.cs" Line="57" Column="14" />
+      <File FileName="Nibbles.Shared/Layers/GameTutorialLayer.cs" Line="14" Column="26" />
+      <File FileName="Nibbles.Shared/Nodes/Bubble.cs" Line="109" Column="17" />
+      <File FileName="Nibbles.Shared/Helpers/Settings.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/Helpers/Utils.cs" Line="1" Column="1" />
+      <File FileName="Nibbles.Shared/GameAppDelegate.cs" Line="1" Column="1" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/nibbles/Nibbles.Shared/Layers/GameStartLayer.cs" line="59" column="1" />
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/nibbles/Nibbles.Shared/Layers/GameStartLayer.cs" line="64" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Nibbles.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Nibbles.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BE94E2B1-3A92-414E-AE00-C45942CFCDEE" />
+  <MultiItemStartupConfigurations />
 </Properties>
